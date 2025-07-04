@@ -1,0 +1,119 @@
+﻿@model IEnumerable<ProductionCFD2.Models.ProductionTable>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>List Of Production Tables</h4>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Production_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shift)
+            </th>
+           @*<th>
+                @Html.DisplayNameFor(model => model.Material)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Material_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Input_Batch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_Input)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rolling_Plan_Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grinding_Loss)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grinding_Wheel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndCut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sample_Loss)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Finish_Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yield)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShiftIncharge)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Production_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Shift.Shift_Name)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Material.Material_Number)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Material_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Input_Batch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Input)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rolling_Plan_Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grinding_Loss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grinding_Wheel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndCut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sample_Loss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Finish_Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yield)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShiftIncharge.ShiftIncharge_Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Production_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Production_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Production_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

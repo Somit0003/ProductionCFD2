@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ProductionCFD2.Models.Material>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>List Of Materials</h4>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Material_Number)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Material_Number)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Material_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Material_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Material_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
